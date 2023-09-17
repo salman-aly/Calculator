@@ -58,6 +58,12 @@ button {
 }
 
 
+button:hover{
+    background-color: #ccc;
+    transition: 0.3s;
+}
+
+
 .equal-btn {
     background-color: #F2902A;
 }

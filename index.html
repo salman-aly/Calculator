@@ -12,44 +12,41 @@
 <body>
     <div class="main-container">
         <div class="display">
-            <input disabled type="text" placeholder="0" id="displayArea" value="">
+            <input disabled type="text" placeholder="0" id="displayArea">
         </div>
         <div class="operators">
-            <button class="operator" onclick="clearDisplay()" value="AC">AC</button>
-            <button value="" onclick="clearLastDigit()">DEL</button>
-            <button value="%" onclick="operator(value)">%</button>
-            <button value="/" onclick="operator(value)">/</button>
+            <button class="operator" onclick="clearDisplay()">AC</button>
+            <button onclick="singleValueDel()">DEL</button>
+            <button onclick="addToScreen('%')">%</button>
+            <button onclick="addToScreen('/')">/</button>
         </div>
-        <div class="num">
+        <div>
             <div>
-                <button value="7" onclick="number(value)">7</button>
-                <button value="9" onclick="number(value)">9</button>
-                <button value="*" onclick="operator(value)">*</button>
-                <button value="8" onclick="number(value)">8</button>
+                <button onclick="addToScreen('7')">7</button>
+                <button onclick="addToScreen('9')">9</button>
+                <button onclick="addToScreen('*')">*</button>
+                <button onclick="addToScreen('8')">8</button>
             </div>
             <div>
-                <button value="5" onclick="number(value)">5</button>
-                <button value="4" onclick="number(value)">4</button>
-                <button value="6" onclick="number(value)">6</button>
-                <button value="-" onclick="operator(value)">-</button>
+                <button onclick="addToScreen('5')">5</button>
+                <button onclick="addToScreen('4')">4</button>
+                <button onclick="addToScreen('6')">6</button>
+                <button onclick="addToScreen('-')">-</button>
             </div>
             <div>
-                <button value="3" onclick="number(value)">3</button>
-                <button value="2" onclick="number(value)">2</button>
-                <button value="1" onclick="number(value)">1</button>
-                <button value="+" onclick="operator(value)">+</button>
+                <button onclick="addToScreen('3')">3</button>
+                <button onclick="addToScreen('2')">2</button>
+                <button onclick="addToScreen('1')">1</button>
+                <button onclick="addToScreen('+')">+</button>
             </div>
             <div>
-                <button value="00" onclick="number(value)">00</button>
-                <button value="0" onclick="number(value)">0</button>
-                <button value="." onclick="number(value)">.</button>
-                <button value="=" onclick="equal(value)">=</button>
+                <button onclick="addToScreen('00')">00</button>
+                <button onclick="addToScreen('0')">0</button>
+                <button onclick="addToScreen('.')">.</button>
+                <button onclick="sum()" class="equal-btn">=</button>
             </div>
         </div>
     </div>
-
-
-
 
 
     <script src="app.js"></script>

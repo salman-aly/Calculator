@@ -1,57 +1,33 @@
-var currentInput = "";
-var currentOperator = "";
-var preInput = "";
-var lastNewOperator = "+";
-var allOperators = ["+", "-", "/", "%"];
+var screen = document.getElementById("displayArea");
+
+function addToScreen(value) {
+  var calculatorValue = displayArea.value;
+  var operator = ["+", "-", "%", "/", "*"];
+  var last = calculatorValue[calculatorValue.length - 1];
+  var newInput = value;
+
+  if (operator.indexOf(last) !== -1 && operator.indexOf(newInput) !== -1) {
+    calculatorValue = calculatorValue.slice(0, -1) + newInput;
+  } else {
+    calculatorValue += newInput;
+  }
+
+  screen.value = calculatorValue;
+}
 
 function clearDisplay() {
-  currentInput = "";
-  currentOperator = "";
-  preInput = "";
   document.getElementById("displayArea").value = "";
 }
-
-function number(value) {
-  currentInput += value;
-  document.getElementById("displayArea").value = currentInput;
-}
-
-function operator(value) {
-  currentOperator = value;
-  preInput = document.getElementById("displayArea").value;
-  currentInput = "";
-  document.getElementById("displayArea").value =
-    preInput + currentOperator + currentInput;
-}
-
-function updateCurrentInput() {
-  if (
-    allOperators.indexOf(lastOperatorRemove) !== -1 &&
-    allOperators.indexOf(newInput) !== -1
-  ) {
-    currentInput = currentInput.slice(0, -1) + lastNewOperator;
-  } else {
-    lastNewOperator += newInput;
+function singleValueDel() {
+  var inputElement = document.getElementById("displayArea");
+  var inputValue = inputElement.value;
+  if (inputValue.length > 0) {
+    var updatedValue = inputValue.slice(0, -1);
+    inputElement.value = updatedValue;
   }
-  document.getElementById("displayArea").value = currentInput;
 }
 
-function equal() {
-  var result = 0;
-  var num1 = parseFloat(preInput);
-  var num2 = parseFloat(currentInput);
-  if (currentOperator === "+") {
-    result = num1 + num2;
-  } else if (currentOperator === "-") {
-    result = num1 - num2;
-  } else if (currentOperator === "/") {
-    result = num1 / num2;
-  } else if (currentOperator === "%") {
-    result = num1 % num2;
-  }
-
+function sum() {
+  var result = eval(document.getElementById("displayArea").value);
   document.getElementById("displayArea").value = result;
-  currentInput = result.toString();
-  currentOperator = "";
-  preInput = "";
 }
