@@ -16,34 +16,34 @@
         </div>
         <div class="operators">
             <button class="operator" onclick="clearDisplay()" value="AC">AC</button>
-            <button value="" onclick="clearDisplay()">DEL</button>
-            <button value="%" onclick="operator(this.value)">%</button>
-            <button value="/" onclick="operator(this.value)">/</button>
+            <button value="" onclick="clearLastDigit()">DE</button>
+            <button value="%" onclick="operator(value)">%</button>
+            <button value="/" onclick="operator(value)">/</button>
         </div>
         <div class="num">
             <div>
-                <button value="7" onclick="number(this.value)">7</button>
-                <button value="9" onclick="number(this.value)">9</button>
-                <button value="*" onclick="operator(this.value)">*</button>
-                <button value="8" onclick="number(this.value)">8</button>
+                <button value="7" onclick="number(value)">7</button>
+                <button value="9" onclick="number(value)">9</button>
+                <button value="*" onclick="operator(value)">*</button>
+                <button value="8" onclick="number(value)">8</button>
             </div>
             <div>
-                <button value="5" onclick="number(this.value)">5</button>
-                <button value="4" onclick="number(this.value)">4</button>
-                <button value="6" onclick="number(this.value)">6</button>
-                <button value="-" onclick="operator(this.value)">-</button>
+                <button value="5" onclick="number(value)">5</button>
+                <button value="4" onclick="number(value)">4</button>
+                <button value="6" onclick="number(value)">6</button>
+                <button value="-" onclick="operator(value)">-</button>
             </div>
             <div>
-                <button value="3" onclick="number(this.value)">3</button>
-                <button value="2" onclick="number(this.value)">2</button>
-                <button value="1" onclick="number(this.value)">1</button>
-                <button value="+" onclick="operator(this.value)">+</button>
+                <button value="3" onclick="number(value)">3</button>
+                <button value="2" onclick="number(value)">2</button>
+                <button value="1" onclick="number(value)">1</button>
+                <button value="+" onclick="operator(value)">+</button>
             </div>
             <div>
-                <button value="00" onclick="number(this.value)">00</button>
-                <button value="0" onclick="number(this.value)">0</button>
-                <button value="." onclick="number(this.value)">.</button>
-                <button value="=" onclick="equal(this.value)">=</button>
+                <button value="00" onclick="number(value)">00</button>
+                <button value="0" onclick="number(value)">0</button>
+                <button value="." onclick="number(value)">.</button>
+                <button value="=" onclick="equal(value)">=</button>
             </div>
         </div>
     </div>
