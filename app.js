@@ -1,4 +1,4 @@
-var screen = document.getElementById("displayArea");
+var display = document.getElementById("displayArea");
 
 function addToScreen(value) {
   var calculatorValue = displayArea.value;
@@ -12,13 +12,13 @@ function addToScreen(value) {
     calculatorValue += newInput;
   }
 
-  screen.value = calculatorValue;
+  display.value = calculatorValue;
 }
 
 function clearDisplay() {
   document.getElementById("displayArea").value = "";
 }
-function singleValueDel() {
+function singleDeleteValue() {
   var inputElement = document.getElementById("displayArea");
   var inputValue = inputElement.value;
   if (inputValue.length > 0) {
